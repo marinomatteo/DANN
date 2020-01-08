@@ -83,7 +83,7 @@ class DANN(nn.Module):
         self.domain_classifier[4].bias.data = copy.deepcopy(self.classiﬁer[4].bias.data)
 
         
-     def forward(self, x, alpha=None):
+     def forward(self, x, alpha):
         x= self.features(x)
         x = self.avgpool(x)
         features = torch.flatten(x, 1)
