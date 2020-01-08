@@ -82,6 +82,7 @@ class DANN(nn.Module):
         self.domain_classifier[4].weight.data = copy.deepcopy(self.classiﬁer[4].weight.data)
         self.domain_classifier[4].bias.data = copy.deepcopy(self.classiﬁer[4].bias.data)
 
+        
     def forward(self, x, alpha=None):
         x = self.features(x)
         x = self.avgpool(x)
